@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<title>От «я это понимаю» до «я могу это сказать»: как языковой материал становится активным</title>
+<style>
+:root{
+ --paper:#f4f0e8;--ink:#171515;--muted:#70635d;--accent:#8a3038;--accent-dark:#5d242a;
+ --line:#cdbfb2;--soft:#f9f5ee;--body:Georgia,"Times New Roman",serif;--sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#f8f5ef,var(--paper) 28rem);color:var(--ink);font-family:var(--body);-webkit-text-size-adjust:100%}
+a{color:var(--accent-dark);text-underline-offset:3px}
+.progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--accent);z-index:50}
+.article{width:min(820px,calc(100% - 32px));margin:auto;padding:52px 0 80px}
+.meta{font:700 12px/1 var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-weight:500;font-size:clamp(40px,7vw,70px);line-height:.98;letter-spacing:-.035em;margin:0 0 32px}
+.deck{font-size:20px;line-height:1.48;color:#403936;border-top:1px solid #5d524c;border-bottom:1px solid #5d524c;padding:18px 0;margin-bottom:44px}
+.article-paragraph{
+ font-size:19px;line-height:1.72;margin:0 0 28px;
+}
+.article-paragraph strong{font-weight:700}
+.article-paragraph code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#ece3d8;border:1px solid #c9baae;border-radius:4px;padding:.08em .28em;color:#632e34;font-size:.88em}
+.stage-summary{padding-left:20px;border-left:2px solid #bfaea2;margin-top:31px;margin-bottom:31px}
+.stage-summary strong:first-child{color:var(--accent-dark)}
+.thesis-soft{padding:18px 20px;background:#eee7dd;border-left:3px solid var(--accent);margin:32px 0}
+
+
+details{
+  margin:54px 0 48px;
+  border:1px solid #bfaea2;
+  border-radius:14px;
+  background:#f8f4ed;
+  overflow:hidden;
+}
+summary{
+  padding:24px 26px;
+  cursor:pointer;
+  list-style:none;
+  font:800 19px/1.4 var(--sans);
+  color:#302927;
+  background:#f0e9df;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{
+  content:"＋";
+  display:inline-grid;
+  place-items:center;
+  width:34px;height:34px;
+  margin-right:10px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  font-size:22px;
+  vertical-align:-3px;
+}
+details[open] summary::before{content:"−"}
+.details-inner{padding:0 24px 22px}
+.details-inner{padding-bottom:20px}
+.deep-stage{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:30px 0;border-top:1px solid var(--line)}
+.deep-number{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font:800 14px/1 var(--sans)}
+.deep-copy h3{margin:2px 0 14px;font-size:29px;line-height:1.1;font-weight:500}
+.deep-copy p,.deep-copy li,.deep-copy blockquote{font-size:18px;line-height:1.65}
+.deep-copy p{margin:0 0 16px}
+.deep-copy ul{padding-left:1.25em;margin:0 0 18px}
+.deep-copy li{margin:.38em 0}
+.deep-copy blockquote{margin:16px 0;padding:12px 16px;border-left:3px solid var(--accent);background:rgba(255,255,255,.28)}
+.example{margin-top:35px}
+.example::first-line{font-weight:700}
+.pullquote{font-size:20px;line-height:1.62;font-weight:700;padding:20px 22px;border-top:1px solid #796961;border-bottom:1px solid #796961;margin:42px 0}
+.strong-example{font-weight:700}
+.section-lead{margin-top:44px}
+.subhead-paragraph{font-size:23px;line-height:1.4;margin-top:38px}
+.conclusion{margin-top:46px;padding-top:28px;border-top:1px solid #796961}
+.footer{margin-top:54px;padding-top:16px;border-top:1px solid var(--line);font:600 12px/1.5 var(--sans);color:var(--muted)}
+@media(max-width:600px){
+ .article{width:calc(100% - 24px);padding:30px 0 58px}
+ h1{font-size:42px;line-height:1}
+ .deck{font-size:17px;margin-bottom:32px}
+ .article-paragraph{font-size:18px;line-height:1.68;margin-bottom:26px}
+ .stage-summary{padding-left:14px;margin-top:28px;margin-bottom:28px}
+ .deep-stage{grid-template-columns:42px 1fr;gap:12px;padding:24px 0}
+ .deep-number{width:38px;height:38px;font-size:12px}
+ .deep-copy h3{font-size:25px}
+ .deep-copy p,.deep-copy li,.deep-copy blockquote{font-size:17px;line-height:1.62}
+ .pullquote{font-size:18px;padding:16px}
+ .subhead-paragraph{font-size:21px}
+}
+@media(max-width:390px){
+ .article{width:calc(100% - 20px)}
+ h1{font-size:37px}
+ .article-paragraph{font-size:17px}
+}
+
+@media(max-width:600px){
+  summary{
+    padding:20px 18px!important;
+    font-size:17px!important;
+  }
+  .details-inner{padding:0 14px 16px!important;}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<article class="article">
+<div class="meta">Изучение языков · статья</div>
+<h1>От «я это понимаю» до «я могу это сказать»: как языковой материал становится активным</h1>
+
+<section>
+<div class="article-paragraph">Иногда вижу, что во многих массмедиа, рассказывают, что есть самый надежный способ освоения языка. Например, просмотр сериала, карточки Анки, видеокурсы. Но если цель - говорить на английском языке, то очевидно, что нужно говорить как можно больше. С другой стороны, многие говорят, но медленно, забывают слова. Естественно, что у большинства людей пассивный словарный запас намного больше активного. Но просто методом поглощения контента (модным "comprehensible input") перевести новую лексику в активный словарный запас и улучшить говорение сложно. Кстати, гораздо реже упоминают другую теорию, comprehensible output, при которой нужно выражать свои мысли на изучаемом языке, и постепенно заполнять пробелы - то есть, случаи, когда выразить мысль сложно.</div><div class="article-paragraph">Метод, по которому язык учат, чтобы говорить, совмещает input и output. Подчеркну, это справедливо в случае, если цель - говорить. Если цель - читать и слушать, то можно:</div><div class="article-paragraph stage-summary"><strong>1)</strong> Понять новое слово. Или, например, грамматическое правило: вы можете сами прочитать о нем или посмотреть видео.</div><div class="article-paragraph stage-summary"><strong>2)</strong> Понимать его значение в других текстах. Хотите - переводите каждый раз, когда встречаете, пока окончательно не запомните, хотите - предварительно потренируйте на карточках. В учебниках для изучаемых тем есть тесты с вариантами ответов.</div><div class="article-paragraph thesis-soft">Все, дальше никаких упражнений делать не нужно. <strong>Чем чаще вы читаете или слушаете, тем сильнее в первую очередь становятся ваши пассивные навыки, при этом активные навыки повышаются в меньшей степени.</strong></div><div class="article-paragraph">Если же цель - обогатить свой активный словарный запас, то нужно пойти дальше и внедрить новые выражения в свою речь на следующих стадиях, где мы постепенно переходим от управляемого применения к свободному использованию:</div><div class="article-paragraph stage-summary"><strong>3)</strong> Вспомнить, не видя перед собой новый элемент. Можно перевести с русского или ответить на открытый вопрос. Суть в том, что вы знаете, на какую тему идет разговор и недавно изучали лексику или правило.</div><div class="article-paragraph stage-summary"><strong>4)</strong> Правильно использовать новый элемент, то есть начать встраивать его в свою речь. Простой пример - диалоги, в которых обучающиеся имеют набор реплик, каждую из которых нужно использовать в нужный момент.</div><div class="article-paragraph stage-summary"><strong>5)</strong> Разговор (монолог) на изучаемую тему, в ходе которого желательно использовать изученные слова или правила. В задании может быть прямо сказано, что их нужно использовать.</div><div class="article-paragraph stage-summary"><strong>6)</strong> Разговор на тему (монолог) — и в нем нет требований что-то использовать, но по смыслу понятно, что без изученного ранее не обойтись.</div><div class="article-paragraph">То есть стадии 5 и 6 выглядят как "люди сидят в группе и по очереди рассказывают свои истории".</div><div class="article-paragraph stage-summary"><strong>7)</strong> Здесь подключается взаимодействие с другим человеком, в ходе которого могут обсуждаться и сторонние темы. Это сложнее, потому что приходится использовать не только текущую тему, но и весь свой предыдущий опыт изучения английского языка.</div><div class="article-paragraph stage-summary"><strong>8) Пожалуй, самая интересная стадия. Почему в учебниках английского так много тем, и их желательно изучать? Потому что слова и выражения из одной темы могут понадобиться в другой.</strong></div>
+</section>
+<details>
+<summary>Что делать на каждой стадии и какими инструментами тренировать</summary>
+<div class="details-inner">
+<section class="deep-stage">
+<div class="deep-number">1</div>
+<div class="deep-copy">
+<h3>Понимание</h3>
+<p>На первом этапе задача проста: <strong>понять значение нового слова, выражения или грамматической конструкции и увидеть, как она используется</strong>. Например, студент впервые встречает:</p><blockquote><strong>out of stock</strong> = нет в наличии</blockquote><p>Он должен понять не только перевод, но и типичный контекст:</p><blockquote><em>Sorry, this item is currently out of stock.</em></blockquote><p><strong>Как тренировать:</strong></p><ul><li>объяснение преподавателя;</li><li>учебник;</li><li>короткие видеоуроки;</li><li>словарь с примерами;</li><li>ChatGPT;</li><li>примеры из реальных текстов;</li><li>субтитры;</li><li>грамматические справочники.</li></ul><p><strong>Подходящие ресурсы:</strong> Cambridge Dictionary, Oxford Learner's Dictionaries, YouGlish, учебники уровня B1/B2, объясняющие видео. Здесь студенту пока <strong>не обязательно самому производить выражение</strong>. Его задача — сформировать правильное представление о значении и употреблении.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">2</div>
+<div class="deep-copy">
+<h3>Узнавание</h3>
+<p>Теперь студент должен <strong>узнавать изученный материал</strong>, когда встречает его снова. Например:</p><blockquote><em>The shoes I wanted were out of stock.</em></blockquote><p>Студент видит или слышит <code>out of stock</code> и сразу понимает смысл, не возвращаясь к словарю. <strong>Как тренировать:</strong></p><ul><li>чтение;</li><li>listening;</li><li>упражнения multiple choice;</li><li>matching;</li><li>gap-fill с вариантами;</li><li>просмотр сериалов с английскими субтитрами;</li><li>graded readers;</li><li>повторное прослушивание знакомого материала;</li><li>recognition-карточки.</li></ul><p>Именно здесь особенно полезно большое количество <strong>comprehensible input</strong>. Чем чаще знакомая единица встречается в разных контекстах, тем быстрее она начинает распознаваться автоматически.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">3</div>
+<div class="deep-copy">
+<h3>Извлечение из памяти</h3>
+<p>Теперь направление меняется. Студенту <strong>не показывают готовое английское выражение</strong>. Он должен самостоятельно его вспомнить. Например:</p><blockquote>Нет в наличии → ?</blockquote><p>и получить:</p><blockquote><strong>out of stock</strong></blockquote><p>Или:</p><blockquote>Как сказать, что товар закончился?</blockquote><blockquote><em>It was out of stock.</em></blockquote><p><strong>Как тренировать:</strong></p><ul><li>Anki;</li><li>Quizlet;</li><li>RU → EN flashcards;</li><li>вопросы без вариантов ответа;</li><li>перевод коротких предложений;</li><li>закрывание английской части текста и попытка восстановить выражение;</li><li>устные vocabulary quizzes;</li><li>spaced repetition;</li><li>delayed retrieval: повторное припоминание через день, неделю, месяц.</li></ul><p>Здесь принципиальна разница между:</p><blockquote>«Я узнаю <code>out of stock</code>»</blockquote><p>и</p><blockquote>«Я сам могу вспомнить <code>out of stock</code>, когда мне нужно выразить эту мысль».</blockquote><p>Для говорения второй вариант значительно важнее.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">4</div>
+<div class="deep-copy">
+<h3>Управляемое применение</h3>
+<p>Студент уже может вспомнить единицу, но теперь нужно <strong>научиться правильно использовать её в предложении</strong>. Условие ещё достаточно предсказуемое. Например:</p><blockquote>Complete the sentence using <strong>out of stock</strong>:</blockquote><blockquote><em>I wanted to buy the jacket, but ...</em></blockquote><p>Студент:</p><blockquote><em>...it was out of stock.</em></blockquote><p>Или ему дают пять новых выражений и пять конкретных ситуаций, в которых нужно их использовать. <strong>Как тренировать:</strong></p><ul><li>gap-fills без вариантов;</li><li>sentence completion;</li><li>перевод предложений;</li><li>transformation exercises;</li><li>составление собственных примеров;</li><li>ответы на очень конкретные вопросы;</li><li>мини-диалоги по образцу;</li><li>упражнения в учебниках;</li><li>AI-тренажёры с автоматической проверкой.</li></ul><p>На этой стадии студент уже <strong>производит язык</strong>, но ему всё ещё сильно помогает структура задания.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">5</div>
+<div class="deep-copy">
+<h3>Направляемая речь</h3>
+<p>Теперь студент получает <strong>тему или вопрос</strong>, но содержание ответа уже формулирует самостоятельно. Например:</p><blockquote><em>Tell me about a time when something you wanted to buy was unavailable.</em></blockquote><p>Можно дать несколько целевых выражений: <code>out of stock</code> <code>a bargain</code> <code>delivery service</code> <code>get a refund</code> Студент должен самостоятельно решить, <strong>что именно сказать и как встроить эти выражения в ответ</strong>. <strong>Как тренировать:</strong></p><ul><li>discussion questions;</li><li>IELTS-style questions;</li><li>picture prompts;</li><li>speaking cards;</li><li>вопросы преподавателя;</li><li>задания «используй 3 выражения из списка»;</li><li>короткие монологи;</li><li>пересказ личного опыта;</li><li>ответы ChatGPT голосом.</li></ul><p>Именно здесь активная лексика начинает выходить из искусственных упражнений в более естественную речь.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">6</div>
+<div class="deep-copy">
+<h3>Свободная речь</h3>
+<p>Теперь опоры в значительной степени убираются. Вместо:</p><blockquote><em>Use</em> <em><code>out of stock</code><strong>,</strong></em> <em><code>refund</code></em> <em>and</em> <em><code>delivery service</code>.</em></blockquote><p>мы спрашиваем:</p><blockquote><em>Tell me about a bad shopping experience.</em></blockquote><p>Студент сам решает:</p><ul><li>что рассказать;</li><li>какие слова выбрать;</li><li>какую грамматику использовать;</li><li>как организовать высказывание.</li></ul><p>И здесь мы смотрим, <strong>появится ли изученная лексика без прямого требования её использовать</strong>. <strong>Как тренировать:</strong></p><ul><li>свободные монологи;</li><li>описание личного опыта;</li><li>storytelling;</li><li>IELTS Speaking Part 2;</li><li>обсуждение книг, фильмов, новостей;</li><li>voice diary;</li><li>запись двухминутных ответов;</li><li>разговорные клубы;</li><li>разговор с AI без заранее заданного vocabulary list.</li></ul><p>Если изученное выражение начинает появляться здесь самостоятельно, это уже гораздо более серьёзный признак усвоения.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">7</div>
+<div class="deep-copy">
+<h3>Взаимодействие</h3>
+<p>Свободный монолог ещё сравнительно удобен: человек сам контролирует направление разговора. В реальном диалоге появляется другой человек, который может:</p><ul><li>переспросить;</li><li>не понять;</li><li>возразить;</li><li>сменить тему;</li><li>задать неожиданный вопрос;</li><li>попросить уточнить;</li><li>перебить.</li></ul><p>Например:</p><blockquote>Student: <em>The jacket arrived damaged, so I asked for a refund.</em></blockquote><p>Преподаватель:</p><blockquote><em>Did they agree immediately?</em></blockquote><blockquote><em>What would you have done if they had refused?</em></blockquote><blockquote><em>Was the company normally reliable?</em></blockquote><p>Теперь студент должен не воспроизводить подготовленный ответ, а <strong>реагировать в реальном времени</strong>. <strong>Как тренировать:</strong></p><ul><li>индивидуальные занятия;</li><li>разговорные клубы;</li><li>language exchange;</li><li>role-play;</li><li>парная работа;</li><li>debate;</li><li>интервью;</li><li>problem-solving tasks;</li><li>разговор с AI, который задаёт follow-up questions;</li><li>реальные бытовые ситуации на английском.</li></ul><p>Именно взаимодействие заставляет язык становиться более гибким.</p>
+</div>
+</section>
+<section class="deep-stage">
+<div class="deep-number">8</div>
+<div class="deep-copy">
+<h3>Перенос навыка</h3>
+<p>Последний этап: студент способен использовать изученный материал <strong>в ситуации, для которой его специально не тренировали</strong>. Например, <code>reliable</code> изучалось в теме <strong>Shopping</strong>:</p><blockquote><em>a reliable delivery service</em></blockquote><p>Через месяц студент обсуждает технологии и говорит:</p><blockquote><em>I need a reliable laptop for work.</em></blockquote><p>Или обсуждает источники информации:</p><blockquote><em>I’m not sure this is a reliable source.</em></blockquote><p>Никто ему не напоминал слово. Он сам перенёс его в новый контекст. <strong>Как тренировать:</strong></p><ul><li>возвращение к старой лексике в новых темах;</li><li>mixed-topic discussions;</li><li>неожиданные вопросы;</li><li>чтение разных жанров;</li><li>обсуждение новых видео и статей;</li><li>проектные задания;</li><li>эссе;</li><li>реальные разговоры;</li><li>задачи, где студент не знает заранее, какая лексика понадобится;</li><li>периодическое возвращение к материалу через несколько недель и месяцев.</li></ul><p>Именно здесь можно говорить, что единица языка начинает становиться <strong>частью собственного языкового репертуара студента</strong>, а не просто материалом конкретного урока.</p>
+</div>
+</section>
+</div>
+</details>
+<section>
+<div class="article-paragraph">Также в расширенном и слегка размытом ИИ-варианте изложено на <a href="https://simplyenglish222.github.io/reading1/english-8-stages.html" rel="noopener" target="_blank">HTML-страничке</a>.</div><div class="article-paragraph subhead-paragraph">Что нам дает понимание того, что существуют некие стадии обогащения своей речи?</div><div class="article-paragraph example">Пример 1. Если вы смотрите каждый день shorts или телеграм-посты с интересными словами, то это относится к первой стадии, новая информация проходит сквозь вас, почти полностью забываясь. Или ко второй, если вы эти слова уже где-то видели</div><div class="article-paragraph example">Пример 2. Смотрите видео, где диктор читает книгу на английском и переводит на русский. Здесь все зависит от того, как смотреть, внимательно или занимаясь параллельно чем-то другим. Подходит как способ изучить новое и повторить изученное.</div><div class="article-paragraph example">Пример 3. Изучаем учебник по грамматике, например, Grammar In Use by Murphy. Новая информация с объяснениями (правила) есть, проверочные упражнения есть, и управляемое применение тоже присутствует. Однако в учебниках по грамматике обычно нет совсем уж открытых вопросов и не подразумевается тренировка взаимодействия с другими людьми.</div><div class="article-paragraph example">Пример 4. На YouTube есть хорошие видеокурсы, в которых иногда обещают провести вас от уровня A1 до B2, а то и выше. Состоят они обычно из большого количества предложений и выражений, которые переводятся диктором в кадре. Если вы будете останавливать видео и переводить сами, то можно добраться до стадии 3.</div><div class="article-paragraph pullquote"><strong>То есть, если вы можете правильно перевести предложение, пусть и со сложной лексикой и грамматикой, это не всегда означает, что в реальной речи, без "запроса" они будут присутствовать.  Можно перевести предложение в уме, но пять минут спустя уже не суметь использовать ту же конструкцию, когда она понадобится в разговоре. Для успешного внедрения нужно неоднократно попадать в ситуации, где эта конструкция действительно требуется.</strong></div><div class="article-paragraph example strong-example"><strong>Пример 5.</strong> В современных учебниках иностранного языка первой темой часто идут приветствия. Схема четко прослеживается: Видим слова "Hi", "Goodbye", нам их переводят, мы вставляем их в пропуски в диалогах, а потом в общении используем. И уже никогда не забываем, и можем поздороваться не только с учителем или одногруппником, но и с продавцом, официантом и т.д.**</div><div class="article-paragraph">При этом, если какие-то стадии введения в речь пропущены, то могут быть сложности вроде медленной речи, забытых слов, или невозможности выразить некоторые мысли.</div><div class="article-paragraph example">Пример 6. Грамматические ошибки в речи вызваны недостаточной проработкой стадий 2, 3, 4, 5. Present Simple изучается на третьем-четвертом уроке, и обычно студенты могут объяснить, как он образуется, но "s" в третьем лице единственного числа все равно не добавляют. В других случаях могут использоваться неестественные для английского языка слова и выражения вроде  всем известного <strong>"home task",</strong>  вместо <strong>"homework"</strong> когда даже стадия 1 не была пройдена, но слово, тем не менее, автоматизировано в речи и никаких проблем с его припоминанием не вызывает.</div><div class="article-paragraph section-lead">Поэтому важно не только практиковать разговорную, но и работать над предыдущими стадиями. Чтение и аудирование способствуют постоянному повторному узнаванию слов и быстрому извлечению их значения из памяти, а перевод на английский, чтение вслух и запоминание текстов наизусть способствуют автоматизации речи. Разговоры в учебных условиях на заданную тему помогают мозгу понять, что изучаемые языковые элементы лучше всего подходят для выражения мысли в похожих ситуациях. И наконец, разговоры на свободные темы и за пределами класса переносят выражения и правила в реальный мир. Если не уделять внимания какой-то из стадий, то получаются ситуации, где люди живут среди носителей, но уровень владения языком не повышается. Или можно хорошо проделывать задания в условиях обучения, но не так успешно коммуницировать, когда вместо привычного учителя собеседником оказывается носитель с необычным акцентом.</div><div class="article-paragraph conclusion">Таким образом, разговорная речь состоит из множества элементов, которые нужно уметь соединять в нужный момент речи. Помимо традиционного обучения с преподавателями, сейчас можно использовать AI в качестве собеседника. В моей практике были и люди, которые дошли до высоких уровней, говоря только сами с собой, и это, пожалуй, самый доступный метод совершенствования, в котором разве что отсутствует обратная связь. Ясно одно: без большого количества коммуникативных ситуаций, естественных или созданных искусственным образом, сложно развивать разговорный навык, именно поэтому современные методы изучения нацелены на коммуникацию. Все другие методы, вроде грамматико-переводного или Comprehensible Input, хорошо подготавливают к коммуникации, но слова не начнут сами магическим образом вылетать при разговоре, если раньше не было соответствующей "тренировки". Известен факт, что писатель Корней Чуковский, приехав в Лондон, обладал огромным опытом перевода и большим словарным запасом, но при этом не умел говорить. Позднее он закрыл этот пробел. Поэтому, чем раньше начать тренировать разговорную речь, тем большее количество ситуаций будет в "багаже" через определенное время, а чем тщательнее запоминать и автоматизировать изучаемое, тем легче будут выражения и правила "всплывать" в разговоре в удобный момент.</div>
+</section>
+<div class="footer">От понимания и узнавания — к самостоятельной речи, взаимодействию и переносу навыка.</div>
+</article>
+<script>
+const p=document.getElementById('progress');
+function upd(){
+ const max=Math.max(1,document.documentElement.scrollHeight-window.innerHeight);
+ p.style.width=Math.min(100,Math.max(0,scrollY/max*100))+'%';
+}
+addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+</script>
+</body>
+</html>
